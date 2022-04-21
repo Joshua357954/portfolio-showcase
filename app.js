@@ -5,7 +5,7 @@ let first=document.getElementById('sen-1')
 let ses=document.getElementById('sen-2')
 let sendButton=document.querySelector('.send')
 let notice= document.querySelector('.notification')
-let feedback=document.querySelector(".feed")
+let feedbacks=document.querySelector(".feed")
 let info=document.querySelector(".feed-info")
 let portfolicDoc=document.querySelector(".portfolio")
 
@@ -47,8 +47,7 @@ function handleClick(e){
 	console.log(e)
 	e.preventDefault()
 	// if(feedback.value =="") return
-	
-	handleNotice()
+	handleNotice(e)
 }
 
 //  Use sheety api to send the message to my google sheet ...
@@ -126,20 +125,20 @@ let projects= [
 	{
 		title:"Foodler",
 		imgURL:"p-imgs/foodler.png",
-		liveLink:"/",
-		sourceLink:"/",
+		liveLink:"https://loquacious-meerkat-4f6387.netlify.app/",
+		sourceLink:"https://github.com/Joshua357954/foodle-app",
 	},
 	{
 		title:"CountDown App",
 		imgURL:"p-imgs/count-down2.png",
-		liveLink:"/",
+		liveLink:"https://count-downa-app.vercel.app/",
 		sourceLink:"https://github.com/Joshua357954/count-downa-app",
 	},
 	{
 		title:"Drawing App",
 		imgURL:"p-imgs/draw.png",
-		liveLink:"/",
-		sourceLink:"/",
+		liveLink:"https://sprightly-sherbet-ec8ab2.netlify.app/",
+		sourceLink:"https://github.com/Joshua357954/Draw-app",
 	}
 
 ]
@@ -191,36 +190,32 @@ function createProjectCard(img,title,live,source){
 // password 4m5VdgHYhZ
 // Send data to sheety api ...
 
-// function handleNotice(){
+function handleNotice(e){
 
-// let url = 'https://api.sheety.co/9c9131b74e93a891e24c213fc26b7da4/portfolioFeedback/feedback';
-// let body = {
-//     feedback: {
-//       'message':feedback.value
-//     }
-//   }
+	e.preventDefault()
 
-//   try{
-// 	  fetch(url, {
-// 	    method: 'POST',
-// 	    body: JSON.stringify(body)
-// 	  })
-// 	  .then((response) => {
-// 	  	response.json()
-// 	  	notify("Thanks Alot :)")
-// 	  })
-
-// 	  .then(json => {
-// 	    // Do something with object
-// 	    console.log(json.feedback);
-// 	    notify("An error occured")
-// 	  });
-
-// 	}catch{
-// 		notify("An error occured")
-// 	}
+	let url = 'https://api.sheety.co/9c9131b74e93a891e24c213fc26b7da4/portfolioFeedback/feedback';
+	let body = {
+	    feedback: feedbacks.value
+	  }
 
 
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  })
+  .then((response) => {
+  	response.json()  
+  })
+
+  .then(json => {
+    // Do something with object
+    console.log(json);
+    notify("Thanks Alot :)")
+  	feedbacks.value=""
+});
+
+}
 
 
 

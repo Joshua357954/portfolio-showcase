@@ -173,7 +173,13 @@ nav .logo{
 }
 
 #sen-2{
+	padding-top: 20px;
 	animation: calls 10s infinite;
+}
+
+#sen-1{
+	margin:8px 10px;
+	font-family:  Flaticon ;
 }
 
 

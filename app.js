@@ -95,7 +95,7 @@ let projects= [
 	{
 		title:"check Up (social)",
 		imgURL:"p-imgs/check-up.png",
-		liveLink:"/",
+		liveLink:"https://qzo.herokuapp.com",
 		sourceLink:"https://github.com/Joshua357954/check-up-app",
 	},
 	{

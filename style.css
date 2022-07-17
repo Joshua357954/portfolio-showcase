@@ -144,7 +144,7 @@ nav .logo{
 .intro img{
 	width: 17rem;
 	height:17rem;
-	background-size: contain;
+	object-fit: cover;
 	border-radius:50%;
 }
 
@@ -257,7 +257,7 @@ img[src="code.png"]:hover{
 .project img{
 	max-width:100%;
 	height: 220px;
-	
+
 	flex:1;
 }
 

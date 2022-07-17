@@ -95,8 +95,8 @@ let projects= [
 	{
 		title:"check Up (social)",
 		imgURL:"p-imgs/check-up.png",
-		liveLink:"https://qzo.herokuapp.com",
-		sourceLink:"https://github.com/Joshua357954/check-up-app",
+		liveLink:"https://vqze.netlify.app",
+		sourceLink:"https://github.com/Joshua357954/check-up-react",
 	},
 	{
 		title:"Memory Game",
@@ -134,6 +134,10 @@ let projects= [
 		liveLink:"https://count-downa-app.vercel.app/",
 		sourceLink:"https://github.com/Joshua357954/count-downa-app",
 	},
+		{
+		title:"PostMan Clone",
+		sourceLink:"https://github.com/Joshua357954/post-man-clone",
+	},
 	{
 		title:"Drawing App",
 		imgURL:"p-imgs/draw.png",
@@ -155,7 +159,7 @@ projects.map(e => {
 
 	})
 
-function createProjectCard(img,title,live,source){
+function createProjectCard(img='',title,live,source){
 	let pro=document.createElement('div')
 	let idiv=document.createElement('img')
 	let ptag=document.createElement('p')
@@ -176,9 +180,11 @@ function createProjectCard(img,title,live,source){
 	bt1.innerText="View Live"
 	bt2.innerText="Source Code"
 
-	pro.appendChild(idiv)
+	if(img)
+		pro.appendChild(idiv)
 	pro.appendChild(ptag)
-	pro.appendChild(bt1)
+	if(img)
+		pro.appendChild(bt1)
 	pro.appendChild(bt2)
 
 

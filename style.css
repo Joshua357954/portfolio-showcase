@@ -184,11 +184,11 @@ nav .logo{
 
 
 @keyframes calls{
-   0%{ color: black;transform: translateX(-7%); font-size:20px;}
-   30%{ color: yellowgreen; transform: translateX(6%); font-size:20.5px;}
-   50%{ color: seagreen; transform: translateX(-5%); font-size:21px;}
-   75%{ color: darkgray; transform: translateX(5%); font-size:20.5px;}
-   100%{ color: cornflowerblue; transform: translateX(-7%); font-size:20px;}
+   0%{ color: black;transform: translateX(-7%); font-size:19px;}
+   30%{ color: yellowgreen; transform: translateX(6%); font-size:19px;}
+   50%{ color: seagreen; transform: translateX(-5%); font-size:19px;}
+   75%{ color: darkgray; transform: translateX(5%); font-size:19px;}
+   100%{ color: cornflowerblue; transform: translateX(-7%); font-size:19px;}
 }
 
 

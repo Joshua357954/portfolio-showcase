@@ -58,6 +58,7 @@ console.log(window.height)
 function notify(e){	
 	
 	info.innerText= e || "Error Try again .."
+	notice.classList.remove('closed')
 	notice.classList.add("open")
 	setTimeout(()=>{
 		notice.classList.remove("open")
@@ -69,16 +70,17 @@ function notify(e){
 
 let projects= [
 	{
-		title:"Pomodoro App",
-		imgURL:"p-imgs/pomodoro.png",
-		liveLink:"https://pomodoro-1av9qfs9y-joshua357954.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/pomodoro-app",
+		title:"check Up (social)",
+		imgURL:"p-imgs/check-up.png",
+		liveLink:"https://vqze.netlify.app",
+		sourceLink:"https://github.com/Joshua357954/check-up-react",
 	},
+
 	{
-		title:"NetFlix Clone",
-		imgURL:"p-imgs/jetflixf.png",
-		liveLink:"https://netflix-clone-phi-three.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/netflix-clone",
+		title:"Memoriex (In Development)",
+		imgURL:"p-imgs/memoriex.png",
+		liveLink:"https://memoriex-app.netlify.app",
+		sourceLink:"https://github.com/Joshua357954/memoriex-app",
 	},
 	{
 		title:"Wordle Clone",
@@ -93,10 +95,16 @@ let projects= [
 		sourceLink:"https://github.com/Joshua357954/hulu-clone",
 	},
 	{
-		title:"check Up (social)",
-		imgURL:"p-imgs/check-up.png",
-		liveLink:"https://vqze.netlify.app",
-		sourceLink:"https://github.com/Joshua357954/check-up-react",
+		title:"NetFlix Clone",
+		imgURL:"p-imgs/jetflixf.png",
+		liveLink:"https://netflix-clone-phi-three.vercel.app/",
+		sourceLink:"https://github.com/Joshua357954/netflix-clone",
+	},
+	{
+		title:"Pomodoro App",
+		imgURL:"p-imgs/pomodoro.png",
+		liveLink:"https://pomodoro-1av9qfs9y-joshua357954.vercel.app/",
+		sourceLink:"https://github.com/Joshua357954/pomodoro-app",
 	},
 	{
 		title:"Memory Game",
@@ -196,30 +204,33 @@ function createProjectCard(img='',title,live,source){
 // password 4m5VdgHYhZ
 // Send data to sheety api ...
 
-function handleNotice(e){
+async function handleNotice(e){
+
+	if (!feedbacks.value) return 
 
 	e.preventDefault()
+	
+	let drew = {
+		feedback:{ "My People : ":feedbacks.value }
+	}
 
-	let url = 'https://api.sheety.co/9c9131b74e93a891e24c213fc26b7da4/portfolioFeedback/feedback';
-	let body = {
-	    feedback: feedbacks.value
-	  }
+	const data = {
+		method:"GET",
+		// body: JSON.stringify(drew)
+	}
+	
 
-
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(body)
-  })
-  .then((response) => {
-  	response.json()  
-  })
-
-  .then(json => {
-    // Do something with object
-    console.log(json);
-    notify("Thanks Alot :)")
-  	feedbacks.value=""
-});
+	let url = 'https://api.sheety.co/9c9131b74e93a891e24c213fc26b7da4/portfolioFeedbacks/feedbacks';
+	
+	try{
+		const res = await fetch( url , data )
+		console.log("Data : ",await res.json())
+		notify("Thanks Alot :)")
+		feedbacks.value=""
+	}
+	catch(error) {
+		console.log("Error : ", error)
+	}
 
 }
 

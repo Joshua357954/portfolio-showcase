@@ -94,63 +94,17 @@ let projects= [
 		liveLink:"https://hulu-clone-kappa-ten.vercel.app/",
 		sourceLink:"https://github.com/Joshua357954/hulu-clone",
 	},
-	{
-		title:"NetFlix Clone",
-		imgURL:"p-imgs/jetflixf.png",
-		liveLink:"https://netflix-clone-phi-three.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/netflix-clone",
-	},
-	{
-		title:"Pomodoro App",
-		imgURL:"p-imgs/pomodoro.png",
-		liveLink:"https://pomodoro-1av9qfs9y-joshua357954.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/pomodoro-app",
-	},
-	{
-		title:"Memory Game",
-		imgURL:"p-imgs/memory-game.png",
-		liveLink:"https://memory-game-omega-five.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/memory-game",
-	},
+	
 	{
 		title:"Starbucks Clone",
 		imgURL:"p-imgs/starbucks.png",
 		liveLink:"https://moonbuck-clone.vercel.app/",
 		sourceLink:"https://github.com/Joshua357954/Moonbuck-clone-",
 	},
+	
 	{
-		title:"Tasker",
-		imgURL:"p-imgs/tasker2.png",
-		liveLink:"https://tasker-jade.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/Tasker",
-	},
-	{
-		title:"Cs-Funn(Form)",
-		imgURL:"p-imgs/cs-funn-form.png",
-		liveLink:"https://cs-form.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/cs-form",
-	},
-	{
-		title:"Foodler",
-		imgURL:"p-imgs/foodler.png",
-		liveLink:"https://loquacious-meerkat-4f6387.netlify.app/",
-		sourceLink:"https://github.com/Joshua357954/foodle-app",
-	},
-	{
-		title:"CountDown App",
-		imgURL:"p-imgs/count-down2.png",
-		liveLink:"https://count-downa-app.vercel.app/",
-		sourceLink:"https://github.com/Joshua357954/count-downa-app",
-	},
-		{
 		title:"PostMan Clone",
 		sourceLink:"https://github.com/Joshua357954/post-man-clone",
-	},
-	{
-		title:"Drawing App",
-		imgURL:"p-imgs/draw.png",
-		liveLink:"https://sprightly-sherbet-ec8ab2.netlify.app/",
-		sourceLink:"https://github.com/Joshua357954/Draw-app",
 	}
 
 ]
